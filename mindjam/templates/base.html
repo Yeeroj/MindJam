@@ -20,15 +20,15 @@
     </div>
     <ul class="nav navbar-nav">
         {% if user.is_authenticated %}
-        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'home'%}">Home</a></li>
         <li><a href="#">Add Disease</a></li>
-        <li><a href="#">Log Out!</a></li>
+        <li><a href="{% url 'logout' %}">Log Out!</a></li>
 
         {% else  %}
 
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Log in!</a></li>
-        <li><a href="#">Sign Up!</a></li>
+        <li><a href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'login' %}">Log in!</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up!</a></li>
 
 
         {% endif %}

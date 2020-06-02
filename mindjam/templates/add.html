@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+
+    <form action="{% url 'add' %}" method="post">
+        {% csrf_token %}
+        <h4>Select all the fields you have come through</h4>
+        <input type="text" placeholder="Area" name="area" id="area"><br>
+        <ul>
+            <li><input type="radio" name="malaria" id="malaria">Malaria</li><br>
+            <li><input type="radio" name="dengue" id="dengue">Dengue</li><br>
+            <li><input type="radio" name="aids" id="aids">Aids</li><br>
+            <li><input type="radio" name="cancer" id="cancer">Cancer</li><br>
+            <li><input type="radio" name="corona" id="corona">Corona</li><br>
+            <li><input type="radio" name="polio" id="polio">Polio</li><br>
+
+
+
+        </ul>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+
+{% endblock content %}
